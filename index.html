@@ -16,13 +16,13 @@
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <h2>Cars<span>.</span></h2>
+      <h2 class="logo">Cars<span>.</span></h2>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Review</a></li>
-        <li><a href="#">Featured</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="link" href="#">Home</a></li>
+        <li><a class="link" href="#">About</a></li>
+        <li><a class="link" href="#">Review</a></li>
+        <li><a class="link" href="#">Featured</a></li>
+        <li><a class="link" href="#">Contact</a></li>
       </ul>
       <div class="social">
         <ul>
@@ -43,20 +43,69 @@
       <!-- Main content for all website -->
       <div class="content">
         <h1>Car Dealing Experience</h1>
-        <h3>Redefined!</h3>
+        <h3 class="redefined">Redefined!</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          autem rem, ullam ipsa, totam nobis laboriosam facere
+          Find the best cars for the best days. Hit the roads and speed with the
+          best experience ever.
         </p>
         <a href="#" class="btn">Explore Cars</a>
       </div>
       <!-- Main Image for the first page -->
       <div class="img-container">
         <div class="cube">
-          <img src="/src/img/car.png" alt="Car" />
+          <img src="/src/img/Lamborghini.png" class="car-selected" alt="Car" />
         </div>
       </div>
       <div class="square"></div>
+
+      <!-- Cars options  -->
+      <div class="cars">
+        <div class="mark">
+          <a
+            href="#"
+            class="active lamborghini"
+            onclick="carSlider('/src/img/Lamborghini.png'); primaryColor('#daae15')"
+            >Lamborghini</a
+          >
+          <a
+            href="#"
+            class="ferrari"
+            onclick="carSlider('/src/img/Ferrari.png'); primaryColor('#D4010E')"
+            >Ferrari</a
+          >
+          <a
+            href="#"
+            class="mclaren"
+            onclick="carSlider('/src/img/McLaren.png'); primaryColor('#611E14')"
+            >McLaren</a
+          >
+          <a
+            href="#"
+            class="ford"
+            onclick="carSlider('/src/img/Ford.png'); primaryColor('#2E2E2E')"
+            >Ford</a
+          >
+          <a
+            href="#"
+            class="bugatti"
+            onclick="carSlider('/src/img/Bugatti.png'); primaryColor('#01A8FB')"
+            >Bugatti</a
+          >
+        </div>
+      </div>
     </div>
+    <script>
+      function carSlider(model) {
+        document.querySelector(".car-selected").src = model;
+      }
+
+      function primaryColor(color) {
+        document.querySelector(".logo").style.color = color;
+        document.querySelector(".redefined").style.color = color;
+        document.querySelector(".btn").style.background = color;
+        document.querySelector(".cube").style.borderColor = color;
+        document.querySelector(".square").style.background = color;
+      }
+    </script>
   </body>
 </html>
