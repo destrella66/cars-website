@@ -17,7 +17,8 @@
     <!-- Navbar -->
     <div class="navbar">
       <h2 class="logo">Cars<span>.</span></h2>
-      <ul>
+      <div class="toggleMenu"></div>
+      <ul class="navigation">
         <li><a class="link" href="#">Home</a></li>
         <li><a class="link" href="#">About</a></li>
         <li><a class="link" href="#">Review</a></li>
@@ -48,51 +49,58 @@
           Find the best cars for the best days. Hit the roads and speed with the
           best experience ever.
         </p>
-        <a href="#" class="btn">Explore Cars</a>
+        <button type="button" href="#" class="btn">Explore cars</a>
       </div>
       <!-- Main Image for the first page -->
       <div class="img-container">
-        <div class="cube">
           <img src="/src/img/Lamborghini.png" class="car-selected" alt="Car" />
-        </div>
       </div>
-      <div class="square"></div>
 
-      <!-- Cars options  -->
-      <div class="cars">
-        <div class="mark">
+    </div>
+    <!-- Cars options  -->
+    <div class="cars">
+      <ul class="mark">
+        <li>
           <a
             href="#"
             class="active lamborghini"
             onclick="carSlider('/src/img/Lamborghini.png'); primaryColor('#daae15')"
             >Lamborghini</a
           >
+        </li>
+        <li>
           <a
             href="#"
             class="ferrari"
             onclick="carSlider('/src/img/Ferrari.png'); primaryColor('#D4010E')"
             >Ferrari</a
           >
+        </li>
+        <li>
           <a
             href="#"
             class="mclaren"
             onclick="carSlider('/src/img/McLaren.png'); primaryColor('#611E14')"
             >McLaren</a
           >
+        </li>
+        <li>
           <a
             href="#"
             class="ford"
             onclick="carSlider('/src/img/Ford.png'); primaryColor('#2E2E2E')"
             >Ford</a
           >
+        </li>
+        <li>
           <a
             href="#"
             class="bugatti"
             onclick="carSlider('/src/img/Bugatti.png'); primaryColor('#01A8FB')"
             >Bugatti</a
           >
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
     <script>
       function carSlider(model) {
@@ -103,8 +111,13 @@
         document.querySelector(".logo").style.color = color;
         document.querySelector(".redefined").style.color = color;
         document.querySelector(".btn").style.background = color;
-        document.querySelector(".cube").style.borderColor = color;
-        document.querySelector(".square").style.background = color;
+      }
+      function toggleMenu(){
+        const toggleMenu =  document.querySelector('.toggleMenu');
+        const navigation =  document.querySelector('.navigation');
+        toggleMenu.classList.toggle('active');
+        navigation.classList.toggle('active');
+
       }
     </script>
   </body>
