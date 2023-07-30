@@ -164,7 +164,7 @@ body {
 }
 
 .container .img-container img {
-  width: 100%;
+  max-width: 450px;
   position: absolute;
 }
 .cars {
